@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "text": "Mom's Birthday ",
+      "day": "12 March",
+      "reminder": true,
+      "id": 1
+    },
+    {
+      "text": "Birthday party",
+      "day": "1 March",
+      "reminder": false,
+      "id": 2
+    },
+    {
+      "text": "Republic day",
+      "day": " 7 Feb",
+      "reminder": true,
+      "id": 3
+    }
+  ]
+}
