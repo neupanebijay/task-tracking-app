@@ -17,6 +17,12 @@
       "day": " 7 Feb",
       "reminder": true,
       "id": 3
+    },
+    {
+      "text": "Pickup wife from work",
+      "day": "today",
+      "reminder": true,
+      "id": 4
     }
   ]
 }

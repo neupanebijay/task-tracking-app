@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import { About } from './components/About.comp';
 import { AddTask } from './components/AddTask.comp';
+import { Footer } from './components/Footer.comp';
 import { Header } from './components/Header.comp';
 import { Tasks } from './components/Tasks.comp';
 
@@ -99,15 +102,26 @@ const toggleReminder = async (id) => {
 
 
   return (
+    <Router>
     <div className="container">
       {/* to chang the add and close button, add prop in header as button is in header */}
       <Header onAddClose={() => setAddCloseTask(!addCloseTask)} addCloseTask={addCloseTask}/>
-      {addCloseTask && <AddTask onAddTask={addTask}/>}
+      
       {/* <Tasks/> */}
-     {tasks.length > 0 ? (
-      <Tasks tasks={tasks} onDelete={deleteTask} onToggle ={toggleReminder} />)  : (
-       'No Tasks to Show')} 
+      <Route path="/" exact render={(props)=>(
+        <>
+          {addCloseTask && <AddTask onAddTask={addTask}/>}
+          {tasks.length > 0 ? (
+          <Tasks tasks={tasks} onDelete={deleteTask} onToggle ={toggleReminder} />)  : (
+          'No Tasks to Show')} 
+        </>
+
+      )}></Route>    
+     
+      <Route path="/about" component={About} />
+       <Footer />
     </div>
+    </Router>
   );
   
   }
